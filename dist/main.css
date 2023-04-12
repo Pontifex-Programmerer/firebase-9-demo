@@ -8,6 +8,9 @@ body {
     color: var(--main-text);
 }
 
+.content-wrapper {
+    width: 80%;
+}
 .centered {
     margin: 0 auto;
 }
@@ -19,4 +22,25 @@ body {
 .singleline-headings h3 {
     display: inline-block;
     margin: 2px 5px;
+}
+
+.list {
+    width: 50ch;
+}
+
+.list li {
+    display: flex;
+    list-style-type: none;
+}
+
+.list li h3{
+    flex-basis: 50%;
+}
+
+.textalign-right{
+    text-align: right;
+}
+
+.textalign-left{
+    text-align: left;
 }

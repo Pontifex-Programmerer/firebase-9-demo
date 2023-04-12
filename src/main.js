@@ -30,19 +30,7 @@ const db = getFirestore();
 const colRef = collection(db, 'phonelist');
 
 // Get collection data
-getDocs(colRef)
-    .then( snapshot => {
-        const phonelist = [];
-        const htmlList = document.querySelector('#phonelist');
-        snapshot.docs.forEach( doc => {
-            //phonelist.push({...doc.data(), id: doc.id})
-            const listItem = createHtmlListItem(doc);
-            htmlList.appendChild(listItem);
-        });
-    })
-    .catch( err => {
-        console.log(err.message);
-    });
+getNumbers();
 
 const addButton = document.querySelector('#submit');
 addButton.addEventListener('click', e => {
@@ -50,12 +38,28 @@ addButton.addEventListener('click', e => {
     const telefon = document.querySelector('#telefon').value;
     addDoc(colRef, {navn,telefon})
         .then(snapshot => {
-            console.log(snapshot);
+            getNumbers();
         })
         .catch(err =>{
             console.log(err.message);
         });
 });
+
+async function getNumbers(){
+    getDocs(colRef)
+    .then( snapshot => {
+        const phonelist = [];
+        const htmlList = document.querySelector('#phonelist');
+        htmlList.innerHTML="";
+        snapshot.docs.forEach( doc => {
+            const listItem = createHtmlListItem(doc);
+            htmlList.appendChild(listItem);
+        });
+    })
+    .catch( err => {
+        console.log(err.message);
+    });
+}
 
 function createHtmlListItem(doc){
     console.log(doc.data())
@@ -65,10 +69,12 @@ function createHtmlListItem(doc){
 
     const nameElement = document.createElement('h3')
     nameElement.appendChild(document.createTextNode(doc.data().navn));
+    nameElement.classList.add('textalign-right');
     liElement.appendChild(nameElement);
 
     const numberElement = document.createElement('h3');
     numberElement.appendChild(document.createTextNode(doc.data().telefon));
+    numberElement.classList.add('textalign-left');
     liElement.appendChild(numberElement);
 
     return liElement;
