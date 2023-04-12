@@ -1,0 +1,22 @@
+*{
+    --main-bg-color: #666999;
+    --main-text: #f6e500;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text);
+}
+
+.centered {
+    margin: 0 auto;
+}
+
+.text-centered {
+    text-align: center;
+}
+
+.singleline-headings h3 {
+    display: inline-block;
+    margin: 2px 5px;
+}

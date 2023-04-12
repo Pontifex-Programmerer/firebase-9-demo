@@ -1,0 +1,28 @@
+{
+  "name": "firebase-9-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pontifex-Programmerer/firebase-9-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pontifex-Programmerer/firebase-9-demo/issues"
+  },
+  "homepage": "https://github.com/Pontifex-Programmerer/firebase-9-demo#readme",
+  "devDependencies": {
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "description": "",
+  "dependencies": {
+    "firebase": "^9.19.1"
+  }
+}
